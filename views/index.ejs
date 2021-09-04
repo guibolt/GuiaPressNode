@@ -1,0 +1,31 @@
+<%- include('partials/header'); %> <%- include('partials/homeNavbar'); %>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">Seja bem vindo!</h1>
+      <p class="lead">
+        Este é um simples componente jumbotron para chamar mais atenção a um
+        determinado conteúdo ou informação.
+      </p>
+      <hr class="my-4" />
+      <p>
+        Ele usa classes utilitárias para tipografia e espaçamento de conteúdo,
+        dentro do maior container.
+      </p>
+      <a class="btn btn-primary btn-lg" href="#" role="button">Leia mais</a>
+    </div>
+    <% articles.forEach(article => { %>
+    <hr />
+    <div class="card">
+      <div class="card-header">
+        <h2><%=article.title%></h2>
+        <p><%=article.createdAt%></p>
+        <div class="card-body">
+          <a href="/<%=article.createdAt%>" class="btn btn-success">Ler artigo</a>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</body>
+<%- include('partials/footer'); %>
